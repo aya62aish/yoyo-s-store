@@ -19,7 +19,7 @@ class MemberController extends Controller
         if(count($members) > 0) {
             return ApiResponse::sendresponse(200, 'members retrieved successfully.', MembersResourse::collection($members));
         }
-        return ApiResponse::sendresponse(200, 'No members found.');
+        return ApiResponse::sendresponse(200, 'No members found.',[]);
     }
     public function show($id) {
         $member = Member::find($id);
@@ -27,10 +27,12 @@ class MemberController extends Controller
         if($member) {
             return ApiResponse::sendresponse(200, 'members retrieved successfully.',new MembersResource2($member));
         }
-        return ApiResponse::sendresponse(200, 'No member found.');
+        return ApiResponse::sendresponse(200, 'No member found.',[]);
     }
-    public function favourite (){
-        $members = member::where('status','favourite')->get();
+    public function favourite (Request $request){
+        $user = auth()->user();
+        $favorites = $user->favoriteMembers()->get();
+//        $members = member::where('status','favourite')->get();
 //        member::create(
 //            [
 //                'name' => 'kael',
@@ -42,18 +44,40 @@ class MemberController extends Controller
 //                'facebook' =>'thi facebook'
 //            ]
 //        );
-        if(count($members) > 0) {
-            return ApiResponse::sendresponse(200,'members retrieved successfully.', MembersResourse::collection($members));
+        if(count($favorites) > 0) {
+            return ApiResponse::sendresponse(200,'members retrieved successfully.', MembersResource2::collection($favorites));
         }
         return ApiResponse::sendresponse(200, 'No members found.', []);
     }
     public function favourites (Request $request, $id) {
         $members = member::find($id);
         if($members) {
-            member::where('id',$id)->update(['status' => 'favourite']);
-            return ApiResponse::sendresponse(200,'members updated successfully.', []);
+            $user = auth()->user();
+
+            if ($user->favoriteMembers()->where('member_id', $id)->exists()) {
+                $user->favoriteMembers()->detach($id);
+            } else {
+                $user->favoriteMembers()->attach($id);
+            }
+
+            return ApiResponse::sendresponse(200, 'members updated successfully.', []);
         }
         return ApiResponse::sendresponse(200, 'No members found.', []);
+
+
+
+
+//        $members = member::find($id);
+//        if($members) {
+//            if($members->status == 'favourite') {
+//                member::where('id',$id)->update(['status' => 'normal']);
+//            }
+//            else {
+//                member::where('id',$id)->update(['status' => 'favourite']);
+//            }
+//            return ApiResponse::sendresponse(200,'members updated successfully.', []);
+//        }
+//        return ApiResponse::sendresponse(200, 'No members found.', []);
     }
     public function rate(Request $request, $id)
     {

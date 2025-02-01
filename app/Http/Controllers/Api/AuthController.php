@@ -25,6 +25,10 @@ class AuthController extends Controller
     public function Register(RegisterRequest $request) {
         $data = $request->validated();
         $otp = rand(100000, 999999);
+      $x = User::where('email' , $data['email'])->get();
+      if(count($x)){
+      return ApiResponse::sendresponse(409, 'email already found', []);
+      }
         $user = User::create(
             [
                 'name' => $data['name'],
@@ -74,6 +78,23 @@ class AuthController extends Controller
             return ApiResponse::sendresponse(401, 'login failed',[]);
         }
     }
+   /**
+     * edit profile function to edit email and name
+     */
+    public function editProfile(Request $request) {
+        $data = Validator::make($request->all(),
+            [
+                'name' => 'required',
+                'email' => 'required|email',
+            ]
+        );
+        $user = auth()->user();
+        $user = user::find($user->id);
+        $user->name  = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        return ApiResponse::sendresponse(201, 'updated successfully', $user);
+    }
 
     /**
      * @param Request $request
@@ -104,15 +125,11 @@ class AuthController extends Controller
             $otp = rand(100000, 999999);
             //check the token
           $token =  $user->createToken('login')->plainTextToken;
-            PasswordReset::create([
-                'email' => $user->email,
-                'user_id' => $user->id,
-                'otp' => $otp,
-               'token' => $token,
-            ]);
+           $user->otp = $otp;
+             $user->save();
             mail::to($user->email)->send(new OtpCheck($otp));
             //send otp
-        return ApiResponse::sendresponse(200, 'otp sent successfully',[]);
+        return ApiResponse::sendresponse(200, 'otp sent successfully', ['token' => $token]);
         }
         return ApiResponse::sendresponse(422, 'email not found',[]);
 

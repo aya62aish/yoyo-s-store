@@ -1,61 +1,100 @@
 @extends('admin.master')
-
-@section('title', __('keywords.show'))
-
+@section('title', __('keywords.show_member'))
 @section('content')
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12">
-
-
-                <div class="card shadow">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">{{ __('keywords.member_details') }}</h5>
+                    </div>
                     <div class="card-body">
+                        <div class="text-center mb-4">
+                            <img src="{{ asset($member->icon) }}" class="img-fluid rounded-circle mb-3" style="max-width: 200px;" alt="{{ $member->name }}">
+                            <h4 class="mb-1">{{ $member->name }}</h4>
+                        </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <label for="title">{{ __('keywords.title') }}</label>
-                                <p class="form-control">{{ $section }}</p>
-                                <label for="title">{{ __('keywords.category_name') }}</label>
-                                <p class="form-control">{{ $category }}</p>
-                                <label for="title">{{ __('keywords.member_name') }}</label>
-                                <p class="form-control">{{ $member }}</p>
-
+                            <div class="col-6">
+                                <strong>{{ __('keywords.section') }}:</strong>
+                                <p>{{ $section }}</p>
+                            </div>
+                            <div class="col-6">
+                                <strong>{{ __('keywords.category') }}:</strong>
+                                <p>{{ $category }}</p>
+                            </div>
+                            <div class="col-12">
+                                <strong>{{ __('keywords.location') }}:</strong>
+                                <p>{{ $member->location }}</p>
+                            </div>
+                            <div class="col-12">
+                                <strong>{{ __('keywords.contact_info') }}:</strong>
+                                <p>
+                                    <i class="bi bi-phone"></i> {{ $member->phone }}<br>
+                                    <i class="bi bi-whatsapp"></i> {{ $member->whatsapp }}<br>
+                                    <i class="bi bi-facebook"></i> {{ $member->facebook }}
+                                </p>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-striped">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">{{ __('keywords.member_cover') }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <img src="{{ asset($member->cover) }}" class="img-fluid w-100" alt="{{ $member->name }} Cover">
+                    </div>
+                </div>
+
+                <div class="card shadow mt-4">
+                    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">{{ __('keywords.member_ads') }}</h5>
+                        <a href="{{ route('admin.ads', ['member_id' => $member->id]) }}" class="btn btn-light btn-sm">
+                            <i class="bi bi-plus"></i> {{ __('keywords.add_ad') }}
+                        </a>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover mb-0">
                                 <thead>
                                 <tr>
-                                    <th>{{ __('keywords.ads_name') }}</th>
-                                    <th class="d-flex justify-content-end" >{{ __('keywords.actions') }}</th>
+                                    <th>{{ __('keywords.ad_title') }}</th>
+                                    <th class="text-end">{{ __('keywords.actions') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($ads as $ad)
+                                @forelse($ads as $ad)
                                     <tr>
                                         <td>{{ $ad->title }}</td>
-                                        <td class="d-flex justify-content-end">
-                                            <!-- Show Section Button -->
-                                            <a href="{{route('admin.ads.show', $ad->id)}}" class="btn btn-info btn-sm me-2">
-                                                {{ __('keywords.show') }}
-                                            </a>
-
-                                            <!-- Delete Section Button -->
-                                            <form action="{{route('admin.categories.destroy',$ad->id)}}" method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm"
-                                                        style="margin-left: 10px;"
-                                                        onclick="return confirm('{{ __('keywords.confirm_delete') }}')">
-                                                    {{ __('keywords.delete') }}
-                                                </button>
-                                            </form>
+                                        <td class="text-end">
+                                            <div class="btn-group" role="group">
+                                                <a href="{{ route('admin.ads.show', $ad->id) }}" class="btn btn-info btn-sm">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <form action="{{ route('admin.ads.destroy', $ad->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('{{ __('keywords.confirm_delete') }}')">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr>
+                                        <td colspan="2" class="text-center py-3">
+                                            {{ __('keywords.no_ads_found') }}
+                                        </td>
+                                    </tr>
+                                @endforelse
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>

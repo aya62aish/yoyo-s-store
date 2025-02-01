@@ -42,6 +42,10 @@
                             <div class="col-md-3 font-weight-bold">{{ __('keywords.ad_description') }}</div>
                             <div class="col-md-9">{{ $ad->description }}</div>
                         </div>
+                      <div class="row mb-3">
+                            <div class="col-md-3 font-weight-bold">{{ __('keywords.ad_discount') }}</div>
+                            <div class="col-md-9">{{ $ad->discount }} %</div>
+                        </div>
 
                         <div class="row mb-3">
                             <div class="col-md-3 font-weight-bold">{{ __('keywords.ad_status') }}</div>

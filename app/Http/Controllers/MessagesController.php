@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MessagesController extends Controller
 {
     public function index(){
-     $messages = message::paginate(10)->sortByDesc('created_at');
+     $messages = message::orderBy('created_at')->paginate(5);
      return view('admin.messages.index', compact('messages'));
     }
 }

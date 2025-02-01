@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\OtpCheck;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\SectionsController;
+use App\Http\Controllers\Api\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 //Route::get('/user', function (Request $request) {
@@ -22,6 +23,7 @@ Route::controller(AuthController::class)->group(function () {
    Route::post('/register', 'register');
    Route::post('/login', 'login');
     Route::post('/forgot', 'forgot');
+    Route::post('/edit-profile', 'editProfile')->middleware('auth:sanctum');
     Route::post('/reset', 'reset')->middleware('auth:sanctum');
     Route::post('/logout', 'logout')->middleware('auth:sanctum');
 });
@@ -46,10 +48,10 @@ Route::get('/categories', CategoryController::class);
 ##-----------------------------------------members controller
 Route::controller(MemberController::class)->group(function () {
     Route::get('/members', 'index');
-    Route::get('/members/favourite', 'favourite');
+    Route::get('/members/favourite', 'favourite')->middleware('auth:sanctum');
     Route::get('/member/{id}', 'show');
-    Route::post('/member/favourites/{id}', 'favourites');
-    Route::post('member/rate/{id}', 'rate');
+    Route::post('/member/favourites/{id}', 'favourites')->middleware('auth:sanctum');
+    Route::post('member/rate/{id}', 'rate')->middleware('auth:sanctum');
 });
 
 ##-----------------------------------------ads controller
@@ -60,7 +62,7 @@ Route::prefix('ads')->controller(AdsController::class)->group(function () {
 });
 
 ##-------------------------------------Conatact controller
-Route::post('/contact', ContactController::class);
+Route::post('/contact', ContactController::class)->middleware('auth:sanctum');;
 
 ##--------------------------------------rating controller
 Route::post('/rating', RatingController::class);
@@ -68,3 +70,6 @@ Route::post('/rating', RatingController::class);
 
 ##-------------------------------------search controller
 Route::post('/search', [SearchController::class, 'search']);
+
+##-------------------------------------settings controller
+Route::get('/settings', [SettingsController::class, 'index']);

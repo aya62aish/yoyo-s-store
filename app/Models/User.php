@@ -59,9 +59,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(language::class);
     }
-    public function favorites()
+    public function favoriteMembers()
     {
-        return $this->hasMany(favorite::class);
+        return $this->belongsToMany(member::class, 'favorites', 'user_id', 'member_id')
+            ->withTimestamps();
     }
 
 }

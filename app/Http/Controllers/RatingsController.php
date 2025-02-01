@@ -8,7 +8,7 @@ class RatingsController extends Controller
 {
 
     public function index(){
-        $ratings = rating::paginate(10)->sortByDesc('created_at');
+        $ratings = rating::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.rating.index', compact('ratings'));
     }
 }

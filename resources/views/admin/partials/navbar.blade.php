@@ -20,7 +20,7 @@
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
+             
                 <form action="{{ route('admin.logout') }}" method="post">
                     @csrf
                     <button class="dropdown-item text-danger" type="submit">{{ __('keywords.logout') }}</button>

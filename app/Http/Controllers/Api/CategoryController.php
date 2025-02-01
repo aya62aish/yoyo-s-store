@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $categ = Category::where('id', $request->input('id'))->get();
+        $categ = category::where('section_id', $request->input('id'))->get();
         if($categ){
             return ApiResponse::sendresponse(200,'categories retrieved successfully',  CategoryResourse::collection($categ));
         }

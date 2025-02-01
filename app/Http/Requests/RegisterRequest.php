@@ -57,16 +57,16 @@ protected function failedValidation(Validator $validator)
             ],
             'password' => [
                 'required',                                 // Field is required
-                'string',                                   // Must be a string
-                'min:8',                                    // Minimum length of 8 characters
+                // 'string',                                   // Must be a string
+                'min:4',                                    // Minimum length of 4 characters
                 'max:255',                                  // Maximum 255 characters
                 'confirmed',                                // Must match password_confirmation field
-                'regex:/[A-Z]/',                            // At least one uppercase letter
-                'regex:/[a-z]/',                            // At least one lowercase letter
-                'regex:/[0-9]/',                            // At least one number
-                'regex:/[@$!%*#?&]/',                       // At least one special character
-                'not_regex:/\s/',                           // No spaces allowed
-                'not_in:password,12345678,qwerty,letmein',  // Disallow common passwords
+                // 'regex:/[A-Z]/',                            // At least one uppercase letter
+                // 'regex:/[a-z]/',                            // At least one lowercase letter
+                // 'regex:/[0-9]/',                            // At least one number
+                // 'regex:/[@$!%*#?&]/',                       // At least one special character
+                // 'not_regex:/\s/',                           // No spaces allowed
+                // 'not_in:password,12345678,qwerty,letmein',  // Disallow common passwords
             ],
             'fcm_token'=>
             [

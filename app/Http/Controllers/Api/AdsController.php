@@ -58,6 +58,7 @@ class AdsController extends Controller
         if ($ads->isEmpty()) {
             return ApiResponse::sendresponse(200, "no ads found", []);
         }
+      $ads = AdsResource::collection($ads);
         return ApiResponse::sendresponse(200, "ads retrieved successfully", $ads);
     }
 //    public function latest() {

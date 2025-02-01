@@ -6,24 +6,45 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
+                <!-- Messages Table Card -->
                 <div class="card shadow-lg mb-4">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-primary text-white d-flex align-items-center">
                         <h5 class="card-title mb-0">{{ __('keywords.messages') }}</h5>
                     </div>
-                    @foreach($messages as $message)
 
-                        <div class="card-body">
-                            <!-- Display each attribute in a separate row -->
-                            <div class="row mb-3">
-                                <div class="col-md-3 font-weight-bold">{{ __('keywords.message_name') }}</div>
-                                <div class="col-md-9">{{ $message->name }}</div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-3 font-weight-bold">{{ __('keywords.message_message') }}</div>
-                                <div class="col-md-9">{{ $message->message }}</div>
-                            </div>
+                    <!-- Messages Table -->
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th scope="col" class="fw-bold">{{ __('keywords.sender') }}</th>
+                                    <th scope="col" class="fw-bold">{{ __('keywords.message') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($messages as $message)
+                                    <tr class="table-row">
+                                        <!-- Sender Name with Initial Icon -->
+                                        <td class="d-flex align-items-center">
+                                            <span class="fw-bold">{{ $message->name }}</span>
+                                        </td>
+
+                                        <!-- Full Message Content -->
+                                        <td class="text-muted">
+                                            {{ $message->message }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-4">
+                        <div class="pagination pagination-sm">
+                            {{ $messages->links('pagination::bootstrap-4') }}
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
         </div>
