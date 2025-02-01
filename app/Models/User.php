@@ -20,10 +20,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'email',
         'phone',
         'password',
         'otp',
         'is_verified',
+        'fcm_token'
     ];
 
     /**

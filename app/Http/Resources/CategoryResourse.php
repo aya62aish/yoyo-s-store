@@ -18,6 +18,7 @@ class CategoryResourse extends JsonResource
         return [
           'id' => $this->id,
             'category name' => $this->name,
+            'category icon' => $this->icon,
             'section name' =>section::find($this->section_id)->name,
         ];
     }

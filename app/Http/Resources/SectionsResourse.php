@@ -18,6 +18,7 @@ class SectionsResourse extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'icon' => $this->icon,
             'category numbers' => count($this->category)
         ];
     }

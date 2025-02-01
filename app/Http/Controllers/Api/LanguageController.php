@@ -13,7 +13,6 @@ class LanguageController extends Controller
     {
         $lang = User::find($id);
         if($lang){
-
             return ApiResponse::sendresponse(200,'language',$lang->lang);
         }
         return ApiResponse::sendresponse(422,'un founded user',[]);

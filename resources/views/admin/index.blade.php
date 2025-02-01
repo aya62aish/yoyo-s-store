@@ -1,5 +1,6 @@
-@extends('admin.master')
 
+{{--@dd('SSS')--}}
+@extends('admin.master')
 @section('title', __('keywords.index'))
 
 @section('content')
@@ -12,6 +13,7 @@
                     </div>
                     <div class="col-auto">
                         <form class="form-inline">
+
                             <div class="form-group d-none d-lg-inline">
                                 <label for="reportrange" class="sr-only">Date Ranges</label>
                                 <div id="reportrange" class="px-2 py-2 text-muted">

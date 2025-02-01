@@ -41,6 +41,12 @@ protected function failedValidation(Validator $validator)
                 'regex:/^[a-zA-Z\s]+$/',    // Only letters and spaces allowed
                 'min:2',                    // Minimum 2 characters
             ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+            ],
             'phone' => [
                 'required',                                 // Field is required
                 'string',                                   // Must be a string
@@ -62,6 +68,11 @@ protected function failedValidation(Validator $validator)
                 'not_regex:/\s/',                           // No spaces allowed
                 'not_in:password,12345678,qwerty,letmein',  // Disallow common passwords
             ],
+            'fcm_token'=>
+            [
+                'required',
+                'string',
+            ]
         ];
     }
 }

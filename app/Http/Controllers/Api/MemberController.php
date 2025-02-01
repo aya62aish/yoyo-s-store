@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MembersResourse;
+use App\Http\Resources\MembersResource2;
 use App\Models\ad;
 use App\Models\member;
 use App\Models\review;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class MemberController extends Controller
 {
     public function index(Request $request) {
-        $members = Member::where('id',$request->input('id'))->get();
+        $members = Member::where('category_id',$request->input('id'))->get();
         if(count($members) > 0) {
             return ApiResponse::sendresponse(200, 'members retrieved successfully.', MembersResourse::collection($members));
         }
@@ -22,8 +23,9 @@ class MemberController extends Controller
     }
     public function show($id) {
         $member = Member::find($id);
+
         if($member) {
-            return ApiResponse::sendresponse(200, 'members retrieved successfully.',new MembersResourse($member));
+            return ApiResponse::sendresponse(200, 'members retrieved successfully.',new MembersResource2($member));
         }
         return ApiResponse::sendresponse(200, 'No member found.');
     }

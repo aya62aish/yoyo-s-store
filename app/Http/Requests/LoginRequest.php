@@ -34,15 +34,14 @@ protected function failedValidation(Validator $validator)
     public function rules(): array
     {
         return [
-            'phone' => [
-                'required',                                 // Field is required
-                'string',                                   // Must be a string
-                'min:10',                                   // Minimum 10 characters
-                'max:15',                                   // Maximum 15 characters (adjust for your region)
-            ],
+            'email' => 'required|email',
             'password' => [
                 'required',                                 // Field is required
             ],
-        ];
+            'fcm_token' => [
+                'required',
+                'string',
+            ]
+            ];
     }
 }

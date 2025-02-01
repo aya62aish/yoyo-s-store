@@ -5,7 +5,7 @@
     <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="{{ route('admin.index') }}">
                 <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120"
                     xml:space="preserve">
@@ -33,28 +33,30 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             {{-- Services --}}
-            <x-sidebar-tab href="{{ route('admin.services.index') }}" icon="fe-codesandbox"
-                name="{{ __('keywords.services') }}"></x-sidebar-tab>
+            <x-sidebar-tab href="{{ route('admin.sections') }}" icon="fe-codesandbox"
+                name="{{ __('keywords.sections') }}"></x-sidebar-tab>
 
-            {{-- features --}}
-            <x-sidebar-tab href="{{ route('admin.features.index') }}" icon="fe-bookmark"
-                name="{{ __('keywords.features') }}"></x-sidebar-tab>
+            {{-- categories --}}
+            <x-sidebar-tab href="{{ route('admin.categories') }}" icon="fe-folder"
+                name="{{ __('keywords.categories') }}"></x-sidebar-tab>
 
-            {{-- messages --}}
-            <x-sidebar-tab href="{{ route('admin.messages.index') }}" icon="fe-message-square"
+            {{-- members --}}
+            <x-sidebar-tab href="{{route('admin.members')}}" icon="fe-users"
+                           name="{{ __('keywords.members') }}"></x-sidebar-tab>
+
+            {{-- ads --}}
+            <x-sidebar-tab href="{{route('admin.ads')}}" icon="bi bi-megaphone"
+                name="{{ __('keywords.ads') }}"></x-sidebar-tab>
+
+
+
+            {{-- message --}}
+            <x-sidebar-tab href="{{route('admin.messages')}}" icon="fe-message-square"
                 name="{{ __('keywords.messages') }}"></x-sidebar-tab>
 
-            {{-- subscribers --}}
-            <x-sidebar-tab href="{{ route('admin.subscribers.index') }}" icon="fe-users"
-                name="{{ __('keywords.subscribers') }}"></x-sidebar-tab>
-
-            {{-- testmonials --}}
-            <x-sidebar-tab href="{{ route('admin.testmonials.index') }}" icon="fe-message-circle"
-                name="{{ __('keywords.testmonials') }}"></x-sidebar-tab>
-
-            {{-- settings --}}
-            <x-sidebar-tab href="{{ route('admin.settings.index') }}" icon="fe-settings"
-                name="{{ __('keywords.settings') }}"></x-sidebar-tab>
+            {{-- rating --}}
+            <x-sidebar-tab href="{{route('admin.ratings')}}" icon="fe-message-circle"
+                name="{{ __('keywords.rating') }}"></x-sidebar-tab>
         </ul>
 
     </nav>
