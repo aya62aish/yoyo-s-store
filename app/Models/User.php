@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,8 +20,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'phone',
         'password',
+        'otp',
+        'is_verfied',
     ];
 
     /**
@@ -45,4 +48,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(review::class);
+    }
+    public function language()
+    {
+        return $this->belongsTo(language::class);
+    }
+    public function favorites()
+    {
+        return $this->hasMany(favorite::class);
+    }
+
 }
