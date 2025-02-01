@@ -6,6 +6,7 @@ use App\Helpers\ApiResponse;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\ValidationException;
 
 class RatingRequest extends FormRequest
 {
@@ -21,7 +22,7 @@ class RatingRequest extends FormRequest
         if($this->is('api/*')){
             $response = ApiResponse::sendresponse(422,'validation error', $validator->messages()->all());
             //need to change to validate
-            throw new HttpResponseException( $response);
+            throw new ValidationException($validator, $response);
         }
     }
     /**

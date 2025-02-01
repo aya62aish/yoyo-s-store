@@ -6,7 +6,8 @@ use App\Helpers\ApiResponse;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Nette\Schema\ValidationException;
+use Illuminate\Validation\ValidationException;
+
 
 class RegisterRequest extends FormRequest
 {
@@ -22,7 +23,7 @@ protected function failedValidation(Validator $validator)
     if($this->is('api/*')){
         $response = ApiResponse::sendresponse(422,'validation error', $validator->errors());
         //need to change to validate
-        throw new HttpResponseException( $response);
+        throw new ValidationException($validator, $response);
     }
 }
     /**

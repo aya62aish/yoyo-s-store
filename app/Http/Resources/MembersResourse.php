@@ -28,7 +28,7 @@ class MembersResourse extends JsonResource
             'category' =>category::find($this->category_id)->name,
             'favorite' =>count(favorite::where('member_id',$this->id)->get()),
             'reviews' => count(review::where('member_id',$this->id)->get()),
-            'ads' => ad::where('member_id',$this->id)->get(),
+            'ads' => ad::where('member_id',$this->id)->latest()->take(1)->get(),
             // ask for retrive all data when fetich all members
         ];
     }

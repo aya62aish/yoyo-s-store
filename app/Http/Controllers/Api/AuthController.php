@@ -6,10 +6,12 @@ use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\PasswordReset;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -55,7 +57,40 @@ class AuthController extends Controller
         return ApiResponse::sendresponse(200, 'logout successfully',[]);
     }
 
-//    public function reset(Request $request, ) {
-//        User::find()
-//    }
+    public function forgot(Request $request) {
+      $validator =  Validator::make($request->all(),[
+            'phone' => 'required|numeric|digits:11',
+        ]);
+      if($validator->fails()) {
+          return ApiResponse::sendresponse(422, 'validation error', $validator->errors());
+      }
+      $phone = $request->input('phone');
+        $user = User::where('phone', $phone)->first();
+        if($user) {
+            //otp
+          $tokin =  $user->createToken('login')->plainTextToken;
+            PasswordReset::create([
+                'phone' => $phone,
+                'user_id' => $user->id,
+                'otp' => '123456789',
+               'token' => $tokin,
+            ]);
+            //send otp
+        return ApiResponse::sendresponse(200, 'otp sent successfully',[]);
+        }
+        return ApiResponse::sendresponse(422, 'phone not found',[]);
+
+    }
+    public function reset(Request $request)
+    {
+        $validator =  Validator::make($request->all(),[
+            'password' => 'required|confirmed',
+        ]);
+        if($validator->fails()) {
+            return ApiResponse::sendresponse(422, 'validation error', $validator->errors());
+        }
+        $user = PasswordReset::latest()->take(1)->first();
+        User::where('phone', $user->phone)->update(['password' => Hash::make($request->input('password'))]);
+        return ApiResponse::sendresponse(200, 'password reset successfully',[]);
+    }
 }

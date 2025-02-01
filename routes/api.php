@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AdsController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ContactController;
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(AuthController::class)->group(function () {
    Route::post('/register', 'register');
    Route::post('/login', 'login');
-    Route::post('/reset/{id}', 'reset');
+    Route::post('/forgot', 'forgot');
+    Route::post('/reset', 'reset');
     Route::post('/logout', 'logout')->middleware('auth:sanctum');
 });
 
@@ -36,4 +38,11 @@ Route::get('/categories', CategoryController::class);
 Route::controller(MemberController::class)->group(function () {
    Route::get('/members', 'index');
    Route::get('/member/{id}', 'show');
+});
+
+##-----------------------------------------ads controller
+Route::prefix('ads')->controller(AdsController::class)->group(function () {
+   Route::get('/', 'index');
+   Route::get('/latest', 'latest');
+   Route::get('/top', 'top');
 });
