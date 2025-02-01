@@ -56,7 +56,7 @@ php artisan serve
 
 # Example response for /ads:
 
-    ```bash
+ ```bash
 
 {
 "code": 200,
@@ -72,8 +72,8 @@ php artisan serve
 }
 ]
 }
-
 ```
+
 ### Member Management Endpoints
 - GET /member/{id}: Retrieves a specific member by ID.
 - POST /member/favourites/{id}: Adds a member to favorites.
@@ -97,4 +97,3 @@ The API returns standard HTTP status codes, including:
 - 401 Unauthorized: Authentication required.
 - 404 Not Found: Resource not found.
 - 500 Internal Server Error: A server error occurred.
-```
