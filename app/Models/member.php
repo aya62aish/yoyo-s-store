@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class member extends Model
 {
     protected $table = 'members';
+    protected $fillable = ['name','location','status','whatsapp','phone','category_id','facebook'];
     public function reviews()
     {
         return $this->hasMany(review::class);

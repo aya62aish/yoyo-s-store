@@ -29,15 +29,7 @@ class AdsController extends Controller
     {
         $ads = ad::where('status', 'top')->get();
         $ads = $ads->values();
-//        ad::create(
-//            [
-//                'title' => 'title',
-//                'description' => 'description',
-//                'image' => 'image',
-//                'status' => 'top',
-//                'member_id' => '1',
-//            ]
-//        );
+
         if($ads->isEmpty()){
             return ApiResponse::sendresponse(200,"no ads found", []);
         }

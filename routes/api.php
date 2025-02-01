@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\AdsController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\LanguageController;
+use App\Http\Controllers\Api\LocationsController;
 use App\Http\Controllers\Api\MemberController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\Api\SectionsController;
@@ -21,7 +23,12 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/reset', 'reset');
     Route::post('/logout', 'logout')->middleware('auth:sanctum');
 });
+##-----------------------------------------language controller
+Route::get('/language/{id}', [LanguageController::class,'index']);
+Route::post('/languagepost/{id}',[LanguageController::class,'store']);
 
+##-----------------------------------------locations controller
+Route::get('/locations', LocationsController::class);
 ##-------------------------------------Conatact controller
 Route::post('/contact', ContactController::class);
 
@@ -37,7 +44,10 @@ Route::get('/categories', CategoryController::class);
 ##-----------------------------------------members controller
 Route::controller(MemberController::class)->group(function () {
    Route::get('/members', 'index');
+    Route::get('/members/favourite', 'favourite');
    Route::get('/member/{id}', 'show');
+   Route::post('/member/favourites/{id}', 'favourites');
+   Route::post('member/rate/{id}', 'rate');
 });
 
 ##-----------------------------------------ads controller

@@ -27,9 +27,9 @@ class MembersResourse extends JsonResource
             'facebook' => $this->facebook,
             'category' =>category::find($this->category_id)->name,
             'favorite' =>count(favorite::where('member_id',$this->id)->get()),
-            'reviews' => count(review::where('member_id',$this->id)->get()),
+            'reviews number' => count(review::where('member_id',$this->id)->get()),
+            'rate' => review::where('member_id',$this->id)->get()->avg('rate'),
             'ads' => ad::where('member_id',$this->id)->latest()->take(1)->get(),
-            // ask for retrive all data when fetich all members
         ];
     }
 }
