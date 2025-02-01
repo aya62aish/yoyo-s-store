@@ -54,4 +54,8 @@ class AuthController extends Controller
         $request->user()->currentAccessToken()->delete();
         return ApiResponse::sendresponse(200, 'logout successfully',[]);
     }
+
+//    public function reset(Request $request, ) {
+//        User::find()
+//    }
 }
