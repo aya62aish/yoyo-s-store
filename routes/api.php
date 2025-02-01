@@ -29,11 +29,6 @@ Route::post('/languagepost/{id}',[LanguageController::class,'store']);
 
 ##-----------------------------------------locations controller
 Route::get('/locations', LocationsController::class);
-##-------------------------------------Conatact controller
-Route::post('/contact', ContactController::class);
-
-##--------------------------------------rating controller
-Route::post('/rating', RatingController::class);
 
 ##-----------------------------------------sections controller
 Route::get('/sections', SectionsController::class);
@@ -43,16 +38,23 @@ Route::get('/categories', CategoryController::class);
 
 ##-----------------------------------------members controller
 Route::controller(MemberController::class)->group(function () {
-   Route::get('/members', 'index');
+    Route::get('/members', 'index');
     Route::get('/members/favourite', 'favourite');
-   Route::get('/member/{id}', 'show');
-   Route::post('/member/favourites/{id}', 'favourites');
-   Route::post('member/rate/{id}', 'rate');
+    Route::get('/member/{id}', 'show');
+    Route::post('/member/favourites/{id}', 'favourites');
+    Route::post('member/rate/{id}', 'rate');
 });
 
 ##-----------------------------------------ads controller
 Route::prefix('ads')->controller(AdsController::class)->group(function () {
-   Route::get('/', 'index');
-   Route::get('/latest', 'latest');
-   Route::get('/top', 'top');
+    Route::get('/', 'index');
+    Route::get('/latest', 'latest');
+    Route::get('/top', 'top');
 });
+
+##-------------------------------------Conatact controller
+Route::post('/contact', ContactController::class);
+
+##--------------------------------------rating controller
+Route::post('/rating', RatingController::class);
+

@@ -15,4 +15,5 @@ class review extends Model
     {
         return $this->belongsTo(member::class);
     }
+    protected $fillable = ['member_id', 'rating', 'comment', 'user_id'];
 }

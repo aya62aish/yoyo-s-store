@@ -9,6 +9,7 @@ use App\Models\ad;
 use App\Models\member;
 use App\Models\review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
@@ -58,7 +59,7 @@ class MemberController extends Controller
           'member_id' => $id,
           'rating' => $request->input('rating'),
           'comment' => $request->input('comment'),
-          'user_id' => $request->input('user_id')
+          'user_id' => auth()->id(),
       ]);
         if($review) {
             return ApiResponse::sendresponse(200,'members rated successfully.', []);

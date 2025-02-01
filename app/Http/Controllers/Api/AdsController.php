@@ -10,7 +10,7 @@ class AdsController extends Controller
 {
     public function index()
     {
-      $ads = ad::all()->sortByDesc('created_at')->paginate(10);
+      $ads = ad::paginate(10)->sortByDesc('created_at');
       $ads = $ads->values();
       if($ads->isEmpty()){
           return ApiResponse::sendresponse(200,"no ads found", []);
@@ -18,7 +18,7 @@ class AdsController extends Controller
       return ApiResponse::sendresponse(200,"ads retrieved successfully", $ads);
     }
     public function latest() {
-        $ads = ad::latest()->take(10)->get();
+        $ads = ad::latest()->paginate(10);
         $ads = $ads->values();
         if($ads->isEmpty()){
             return ApiResponse::sendresponse(200,"no ads found", []);
@@ -27,7 +27,7 @@ class AdsController extends Controller
     }
     public function top()
     {
-        $ads = ad::where('status', 'top')->get();
+        $ads = ad::where('status', 'top')->paginate(10)->sortByDesc('created_at');
         $ads = $ads->values();
 
         if($ads->isEmpty()){
