@@ -1,0 +1,1794 @@
+{
+	"info": {
+		"_postman_id": "a9995f0a-8ba8-4bba-815b-9fe95dbcb4b4",
+		"name": "Ads app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38429090"
+	},
+	"item": [
+		{
+			"name": "ads",
+			"item": [
+				{
+					"name": "get all ads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}ads/",
+							"host": [
+								"{{url}}ads"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all ads example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url2}}ads/",
+									"host": [
+										"{{url2}}ads"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 20:59:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ads retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"title\": \"this is title\",\n            \"description\": \"this is description\",\n            \"image\": \"this is image\",\n            \"member_id\": 1,\n            \"created_at\": \"2024-10-22T20:31:04.000000Z\",\n            \"updated_at\": \"2024-10-22T20:31:04.000000Z\"\n        },\n        {\n            \"id\": 1,\n            \"title\": \"ad number 1\",\n            \"description\": \"this is as number 1\",\n            \"image\": \"\",\n            \"member_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"ad number 2\",\n            \"description\": \"this is as number 2\",\n            \"image\": \"\",\n            \"member_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get top ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}ads/top",
+							"host": [
+								"{{url}}ads"
+							],
+							"path": [
+								"top"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get top ads example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url2}}ads/top",
+									"host": [
+										"{{url2}}ads"
+									],
+									"path": [
+										"top"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 21:12:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ads retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"title\": \"title\",\n            \"description\": \"description\",\n            \"image\": \"image\",\n            \"member_id\": 1,\n            \"created_at\": \"2024-10-22T21:12:17.000000Z\",\n            \"updated_at\": \"2024-10-22T21:12:17.000000Z\",\n            \"status\": \"top\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get latest ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}ads/latest",
+							"host": [
+								"{{url}}ads"
+							],
+							"path": [
+								"latest"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get latest ads example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url2}}ads/latest",
+									"host": [
+										"{{url2}}ads"
+									],
+									"path": [
+										"latest"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 21:09:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ads retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"title\": \"this is title\",\n            \"description\": \"this is description\",\n            \"image\": \"this is image\",\n            \"member_id\": 1,\n            \"created_at\": \"2024-10-22T20:31:04.000000Z\",\n            \"updated_at\": \"2024-10-22T20:31:04.000000Z\",\n            \"status\": \"normal\"\n        },\n        {\n            \"id\": 1,\n            \"title\": \"ad number 1\",\n            \"description\": \"this is as number 1\",\n            \"image\": \"\",\n            \"member_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null,\n            \"status\": \"normal\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"ad number 2\",\n            \"description\": \"this is as number 2\",\n            \"image\": \"\",\n            \"member_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null,\n            \"status\": \"normal\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "forget password",
+					"item": [
+						{
+							"name": "reset",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "Nn12345@",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Nn12345@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url2}}reset",
+									"host": [
+										"{{url2}}reset"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "password reset",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "password",
+													"value": "Nn12345@",
+													"type": "text"
+												},
+												{
+													"key": "password_confirmation",
+													"value": "Nn12345@",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url2}}reset",
+											"host": [
+												"{{url2}}reset"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 22 Oct 2024 20:01:39 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"msg\": \"password reset successfully\",\n    \"data\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "forgot password",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "01000619982",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url2}}forgot?phone=01000619982",
+									"host": [
+										"{{url2}}forgot"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "01000619982"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "forgot password example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "01000619982",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url2}}forgot?phone=01000619982",
+											"host": [
+												"{{url2}}forgot"
+											],
+											"query": [
+												{
+													"key": "phone",
+													"value": "01000619982"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 22 Oct 2024 20:05:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 200,\n    \"msg\": \"otp sent successfully\",\n    \"data\": []\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "abdelhamid",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01000619982",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Aa1772004@",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Aa1772004@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}register",
+							"host": [
+								"{{url}}register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "abdelhamid",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "01000619982",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Aa1772004@",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "Aa1772004@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}register",
+									"host": [
+										"{{url}}register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 17:35:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"msg\": \"created successfully\",\n    \"data\": {\n        \"name\": \"abdelhamid\",\n        \"phone\": \"01000619982\",\n        \"is_verified\": \"0\",\n        \"token\": \"2|okCxkm7bDLrkY1p2mQzLnKV3i3UQd9xGz8ULpMDy3ec706a2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "01000619982",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Nn12345@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}login",
+							"host": [
+								"{{url}}login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "01000619982",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Nn12345@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}login",
+									"host": [
+										"{{url}}login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:23:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"login successfully\",\n    \"data\": {\n        \"name\": \"abdelhamid\",\n        \"phone\": \"01000619982\",\n        \"is_verified\": 0,\n        \"token\": \"20|nD6ixWnxkOAsb9HJGFhTWC3jglfHqo8qWR2I2rST03422ddf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SZ2gmQZZGAkfjD3q8Y2eQazZNVfGLrwuaVYIvm4Fbc5ddde4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url2}}logout",
+							"host": [
+								"{{url2}}logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url2}}logout",
+									"host": [
+										"{{url2}}logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 18:39:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"logout successfully\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "contact and rating",
+			"item": [
+				{
+					"name": "contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mido",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "mido message",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}contact",
+							"host": [
+								"{{url}}contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "contact example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "sassa",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "dsdsdsdsdssdds",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url2}}contact",
+									"host": [
+										"{{url2}}contact"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 18:54:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"msg\": \"Message has been sent\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "rating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "review",
+									"value": "this is review",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}rating",
+							"host": [
+								"{{url}}rating"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rating example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "review",
+											"value": "great",
+											"type": "text"
+										},
+										{
+											"key": "rating",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url2}}rating",
+									"host": [
+										"{{url2}}rating"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Oct 2024 03:38:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"msg\": \"rate has been sent\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "language",
+			"item": [
+				{
+					"name": "get language",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url2}}language/3",
+							"host": [
+								"{{url2}}language"
+							],
+							"path": [
+								"3"
+							]
+						},
+						"description": "Ads app to view offers of many places"
+					},
+					"response": [
+						{
+							"name": "get language example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url2}}language/3",
+									"host": [
+										"{{url2}}language"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 22:08:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"language\",\n    \"data\": \"en\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit language",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}languagepost/3?lang=ar",
+							"host": [
+								"{{url}}languagepost"
+							],
+							"path": [
+								"3"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "ar"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit language example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url2}}languagepost/3?lang=ar",
+									"host": [
+										"{{url2}}languagepost"
+									],
+									"path": [
+										"3"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "ar"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Oct 2024 22:13:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"language updated\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "location",
+			"item": [
+				{
+					"name": "get all locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}locations",
+							"host": [
+								"{{url}}locations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all locations example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}locations",
+									"host": [
+										"{{url}}locations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:05:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"Location List\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"location\": \"cairo\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "members",
+			"item": [
+				{
+					"name": "get specific member",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}member/1",
+							"host": [
+								"{{url}}member"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get specific member example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}member/1",
+									"host": [
+										"{{url}}member"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:09:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"members retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"nile hospital\",\n        \"phone\": \"01011236759\",\n        \"location\": \"menouf\",\n        \"whatsapp\": \"01011236759\",\n        \"facebook\": \"facebook_url\",\n        \"category\": \"hospital\",\n        \"favorite\": 0,\n        \"reviews number\": 0,\n        \"rate\": null,\n        \"ads\": [\n            {\n                \"id\": 5,\n                \"title\": \"title\",\n                \"description\": \"description\",\n                \"image\": \"image\",\n                \"member_id\": 1,\n                \"created_at\": \"2024-10-22T21:12:17.000000Z\",\n                \"updated_at\": \"2024-10-22T21:12:17.000000Z\",\n                \"status\": \"top\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url2}}members?id=1",
+							"host": [
+								"{{url2}}members"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all members example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url2}}members?id=1",
+									"host": [
+										"{{url2}}members"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:10:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"members retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"nile hospital\",\n            \"phone\": \"01011236759\",\n            \"location\": \"menouf\",\n            \"whatsapp\": \"01011236759\",\n            \"facebook\": \"facebook_url\",\n            \"category\": \"hospital\",\n            \"favorite\": 0,\n            \"reviews number\": 0,\n            \"rate\": null,\n            \"ads\": [\n                {\n                    \"id\": 5,\n                    \"title\": \"title\",\n                    \"description\": \"description\",\n                    \"image\": \"image\",\n                    \"member_id\": 1,\n                    \"created_at\": \"2024-10-22T21:12:17.000000Z\",\n                    \"updated_at\": \"2024-10-22T21:12:17.000000Z\",\n                    \"status\": \"top\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get all favourites members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}members/favourite",
+							"host": [
+								"{{url}}members"
+							],
+							"path": [
+								"favourite"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all favourites members",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}members/favourite",
+									"host": [
+										"{{url}}members"
+									],
+									"path": [
+										"favourite"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:11:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"members retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"nile hospital\",\n            \"phone\": \"01011236759\",\n            \"location\": \"menouf\",\n            \"whatsapp\": \"01011236759\",\n            \"facebook\": \"facebook_url\",\n            \"category\": \"hospital\",\n            \"favorite\": 0,\n            \"reviews number\": 0,\n            \"rate\": null,\n            \"ads\": [\n                {\n                    \"id\": 5,\n                    \"title\": \"title\",\n                    \"description\": \"description\",\n                    \"image\": \"image\",\n                    \"member_id\": 1,\n                    \"created_at\": \"2024-10-22T21:12:17.000000Z\",\n                    \"updated_at\": \"2024-10-22T21:12:17.000000Z\",\n                    \"status\": \"top\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"mido\",\n            \"phone\": \"01009556168\",\n            \"location\": \"menofia\",\n            \"whatsapp\": \"01009556168\",\n            \"facebook\": \"this is facebook\",\n            \"category\": \"hospital\",\n            \"favorite\": 0,\n            \"reviews number\": 0,\n            \"rate\": null,\n            \"ads\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"kamel\",\n            \"phone\": \"01001556168\",\n            \"location\": \"menofia\",\n            \"whatsapp\": \"01001556168\",\n            \"facebook\": \"this facebook\",\n            \"category\": \"hospital\",\n            \"favorite\": 0,\n            \"reviews number\": 0,\n            \"rate\": null,\n            \"ads\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": \"kael\",\n            \"phone\": \"01001456168\",\n            \"location\": \"menofia\",\n            \"whatsapp\": \"01001456168\",\n            \"facebook\": \"thi facebook\",\n            \"category\": \"hospital\",\n            \"favorite\": 0,\n            \"reviews number\": 0,\n            \"rate\": null,\n            \"ads\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "add member to favourites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}member/favourites/1",
+							"host": [
+								"{{url}}member"
+							],
+							"path": [
+								"favourites",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add member to favourites example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}member/favourites/1",
+									"host": [
+										"{{url}}member"
+									],
+									"path": [
+										"favourites",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:12:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"members updated successfully.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "rate a member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}member/rate/1?rating=4&comment=comment 1",
+							"host": [
+								"{{url}}member"
+							],
+							"path": [
+								"rate",
+								"1"
+							],
+							"query": [
+								{
+									"key": "rating",
+									"value": "4"
+								},
+								{
+									"key": "comment",
+									"value": "comment 1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rate a member example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}member/rate/1?rating=4&comment=comment 1",
+									"host": [
+										"{{url}}member"
+									],
+									"path": [
+										"rate",
+										"1"
+									],
+									"query": [
+										{
+											"key": "rating",
+											"value": "4"
+										},
+										{
+											"key": "comment",
+											"value": "comment 1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Oct 2024 11:20:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"members rated successfully.\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sections and categories",
+			"item": [
+				{
+					"name": "sections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}sections",
+							"host": [
+								"{{url}}sections"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sections example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url2}}sections",
+									"host": [
+										"{{url2}}sections"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Oct 2024 03:53:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"sections retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"medical\",\n            \"category numbers\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}categories?id=1",
+							"host": [
+								"{{url}}categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "categories example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url2}}categories?id=1",
+									"host": [
+										"{{url2}}categories"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Oct 2024 04:06:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"category retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"category name\": \"hospital\",\n        \"section name\": \"medical\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
