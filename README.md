@@ -33,6 +33,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
+<<<<<<< HEAD
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**
@@ -50,9 +51,44 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[OP.GG](https://op.gg)**
 
 ## Contributing
+=======
+ ```bash
+
+{
+"code": 200,
+"msg": "ads retrieved successfully",
+"data": [
+{
+"id": 1,
+"title": "Ad Title",
+"description": "Ad description",
+"image": "image_url",
+"created_at": "2024-10-22",
+"updated_at": "2024-10-22"
+}
+]
+}
+```
+
+### Member Management Endpoints
+- GET /member/{id}: Retrieves a specific member by ID.
+- POST /member/favourites/{id}: Adds a member to favorites.
+- POST /member/rate/{id}: Rates a member.
+- Location & Language Endpoints
+- GET /locations: Retrieves all locations.
+- GET /language/{id}: Retrieves the language setting for a user.
+- POST /languagepost/{id}: Updates the language setting for a user.
+- Contact & Rating Endpoints
+- POST /contact: Sends a message to the admin.
+- POST /rating: Submits a rating for the app.
+- Sections & Categories Endpoints
+- GET /sections: Retrieves all sections.
+- GET /categories?id=1: Retrieves categories by section.
+>>>>>>> e55b5aca5634015e6cc7ee6d57e518dce384656d
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
+<<<<<<< HEAD
 ## Code of Conduct
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
@@ -64,3 +100,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+- 200 OK: Request was successful.
+- 400 Bad Request: The request was invalid.
+- 401 Unauthorized: Authentication required.
+- 404 Not Found: Resource not found.
+- 500 Internal Server Error: A server error occurred.
+
+>>>>>>> e55b5aca5634015e6cc7ee6d57e518dce384656d
